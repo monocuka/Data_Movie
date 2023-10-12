@@ -1,4 +1,4 @@
-import {listFavourite, saveFavourite, search} from './data.js';
+import {deleteFavourite, listFavourite, saveFavourite, search} from './data.js';
 
 
 const printData = (cats) => {
@@ -81,7 +81,15 @@ const printFavouriteCat = (cats) => {
 
     divNew.innerHTML += template
   });
-} 
+  divNew.querySelectorAll('.deleteFav').forEach(btn =>{
+    btn.addEventListener("click", async () => {
+      const catFavId = btn.id;
+      await deleteFavourite(catFavId)
+        .then(result => console.log(result))
+        .catch(error => console.error(error));
+    });
+  });
+}
 
 const callButtonFav = document.getElementById('favouriteBtn');
 callButtonFav.addEventListener("click", async () => {

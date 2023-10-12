@@ -52,3 +52,19 @@ export const listFavourite = async () => {
     .then(response => response.json())
     .catch(error => console.log('error', error))
 }
+
+export const deleteFavourite = async (catFavId) => {
+
+  const endPointDelete = `https://api.thecatapi.com/v1/favourites/${catFavId}`;
+
+
+  const options = {
+    method: 'DELETE',
+    headers:{'x-api-key': myApiKey}
+  };
+
+  fetch(endPointDelete, options)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+}
