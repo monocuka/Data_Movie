@@ -1,15 +1,12 @@
-import {bearerToken} from './secrets.js';
-export const search = async (searchmovie) => {
+import {my_Api_key} from './secrets.js';
+export const search = async () => {
 
-  const endPoint = `https://api.themoviedb.org/3/search/collection?query=${searchmovie}&include_adult=false&language=en-US&page=1`;
+  const endPoint = `https://api.thecatapi.com/v1/images/search?limit=10&api_key=${my_Api_key}`;
     
     
   const options = {
     method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: bearerToken
-    }
+    redirect: 'follow'
   };
     
   return fetch(endPoint, options)
