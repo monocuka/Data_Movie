@@ -19,13 +19,13 @@ const printData = (cats) => {
   //creo el forEach que va a iterar y crear los elementos a mostrar de la API. 
   cats.forEach(element => {
     const template = `
-    <div class="movieCard">
+    <div class="catCard">
         <div class="titleMovie">${element.id}</div>
         <div class="images" >
         <img src="${element.url}" width="500">
         </div>
         <div class="favorite">
-        <button class="btnFav" id="${element.id}">Agregar a favoritos</button>
+        <button class="btnFav" id="${element.id}" >Agregar a favoritos</button>
         </div>
     </div>`;
 
@@ -69,13 +69,13 @@ const printFavouriteCat = (cats) => {
   //creo el forEach que va a iterar y crear los elementos a mostrar de la API. 
   cats.forEach(element => {
     const template = `
-    <div class="movieCard">
+    <div class="catCard">
         <div class="titleMovie">${element.image_id}</div>
         <div class="images" >
         <img src="${element.image.url}" width="500">
         </div>
         <div class="favorite">
-        <button class="deleteFav" id="${element.id}">Eliminar de favoritos</button>
+        <button class="deleteFav"  id="${element.id}" >Eliminar de favoritos</button>
         </div>
     </div>`;
 
